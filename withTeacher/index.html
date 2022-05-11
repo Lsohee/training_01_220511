@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{margin:0; padding:0;}
+    #root{
+      width:100vw;
+      height:500vh; /*브라우저창의 5배*/
+      background: linear-gradient(180deg,#ccc,#333); /*어라 이거도 함수네*/
+    }
+    </style>
+</head>
+<body>
+  <div id="root">
+    
+  </div>
+
+  <script>
+
+    console.dir(window.document);
+    console.log(window);
+    console.log(document.body.scrollHeight)
+    window.addEventListener("wheel", () => {
+      // window는 원래 식별 되어 있어서 안함
+      // console.log("스크롤 감지!");
+      // console.log(window.document);
+      // window.document.body.textContent = "나는 물입니다 흐르는 물입니다";
+      console.log(event.offsetY);
+
+      if(event.offsetY >2000){
+        alert("스크롤 그만 내려~~");
+        window.outerHeight
+      }
+      // console.log(screenY);
+
+
+    } )    
+    
+  </script>
+  
+</body>
+</html>
