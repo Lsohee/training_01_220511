@@ -20,28 +20,78 @@
 </head>
 <body>
   <div id="root">
-    <button>A</button>
+    명대사 알아보기
+    <button>광염 소나타</button>
+    <button>여신님이 보고 계셔</button>
   </div>
 
   <script>
     const root = document.getElementById("root");
-    const btn = document.querySelector("#root>button");
-    console.log(btn);
+    const btnA = document.querySelector("#root>button:nth-child(1)");
+    const btnB = document.querySelector("#root>button:nth-child(2)");
 
+    console.log(btnA);
+    console.log(btnB);
 
-    btn.addEventListener("click", function(){
-      console.log("광염 소나타");
+    // console.log("광염 소나타");
+    let maker = document.createElement("div");
+    
+    
+    
+    
+    let valueA = 0;
 
-      let maker = document.createElement("div");
+    btnA.addEventListener("click", function(){
+      
+      if(valueA===0){
+          // <!-- ^ 팝업창을 만들어냄
+          // console.log("0");
+          valueA=1;
+          
+          root.appendChild(maker);
+          maker.setAttribute("class", `word`);
+          maker.setAttribute("style", "color: white; background-color:#333;")
+          maker.textContent="음악에 영감이 뭐가 중요해!!!!";
+          // maker.setAttribute("style","background-color: #333") // <!-- ? 이거 두개가 동시에 안되네 왤까?밑에 있는게 먼저 읽힘 
+          // maker.setAttribute("style", "color: white")
+      } else {  
+
+        //<!-- ^ 누르면 꺼지게
+        // console.log("1");
+        valueA=0;
+        maker.remove();
+      }
+    });
+
+      let valueB = 0;
+
+btnB.addEventListener("click", function(){
+  
+  if(valueB===0){
+      // <!-- ^ 팝업창을 만들어냄
+      // console.log("0");
+      valueB=1;
+      
       root.appendChild(maker);
       maker.setAttribute("class", `word`);
+      maker.setAttribute("style", "color: #333; background-color:white;")
+      maker.textContent="알갔습네다, 말걸디마라!!";
       // maker.setAttribute("style","background-color: #333") // <!-- ? 이거 두개가 동시에 안되네 왤까?밑에 있는게 먼저 읽힘 
       // maker.setAttribute("style", "color: white")
-      maker.setAttribute("style", "color: white; background-color:#333;")
+  } else {  
 
-      let word = maker.textContent="음악에 영감이 뭐가 중요해!!!!";
+    //<!-- ^ 누르면 꺼지게
+    // console.log("1");
+    valueB=0;
+    maker.remove();
+  }
+    });
+
+
+
+      
        // <!-- memo html에서 직접 하는 style이라 ""안에 한번에 써야함 (개발자 도구 확인할 것)
-    })
+
     
     
   </script>
