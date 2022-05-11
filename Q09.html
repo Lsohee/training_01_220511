@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root{
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+    }
+    .word{
+      width:100px;
+      height:100px;
+      /* background-color: #333; */
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <button>A</button>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    const btn = document.querySelector("#root>button");
+    console.log(btn);
+
+
+    btn.addEventListener("click", function(){
+      console.log("광염 소나타");
+
+      let maker = document.createElement("div");
+      root.appendChild(maker);
+      maker.setAttribute("class", `word`);
+      // maker.setAttribute("style","background-color: #333") // <!-- ? 이거 두개가 동시에 안되네 왤까?밑에 있는게 먼저 읽힘 
+      // maker.setAttribute("style", "color: white")
+      maker.setAttribute("style", "color: white; background-color:#333;")
+
+      let word = maker.textContent="음악에 영감이 뭐가 중요해!!!!";
+       // <!-- memo html에서 직접 하는 style이라 ""안에 한번에 써야함 (개발자 도구 확인할 것)
+    })
+    
+    
+  </script>
+  
+</body>
+</html>
