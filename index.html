@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    #container{
+      width:100vw;
+      height:100vh;
+      /* background-color: #ccc; */
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+    }
+    #root{display: flex; flex-direction: column;align-items: flex-end; width:50%; /*border: 1px solid black;height:100%;*/}
+    #root>div{
+      font-size: 80px;
+      font-weight: bolder;
+      position: absolute;
+    }
+    #root>div:nth-child(1){color:rgba(0, 255, 255, 0.306); top:320px;}
+    #root>div:nth-child(2){color:rgba(0, 255, 85, 0.25); top:450px;}
+    #root>div:nth-child(3){color:rgba(251, 0, 255, 0.226); top:420px;}
+    #root>div:nth-child(4){color:rgba(238, 255, 0, 0.227); top:350px;}
+    #root>div:nth-child(5){color:rgba(255, 102, 0, 0.197); top:390px;}
+    #root>div:nth-child(6){color:rgba(255, 0, 0, 0.204); top:470px;}
+    #root>div:nth-child(7){
+      position: relative;
+      font-size: small;
+      font-weight: 100;
+      top:60px;
+      left:400px;
+      color:#c8c8c8;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="root">
+      <div>function</div>
+      <div>variable</div>
+      <div>index</div>
+      <div>contant</div>
+      <div>object</div>
+      <div>array</div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem unde
+      </div>
+    </div>
+  </div>
+</body>
+</html>
