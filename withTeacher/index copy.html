@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{margin:0; padding:0;}
+    #root{
+      width:100vw;
+      height:500vh; /*브라우저창의 5배*/
+      background: linear-gradient(180deg,#ccc,#333); /*어라 이거도 함수네*/
+    }
+    #root>button{
+      width:10em;
+      height:5em;
+      position: sticky;
+      left:90vw;
+      top:90vh;
+    }
+    #root>button:hover{
+      background-color: #333;
+      color:#ccc;
+    }
+    
+    </style>
+</head>
+<body>
+  <div id="root">
+    <button id="whffu"> 맨위로 </button>
+    
+  </div>
+  <script>
+    const btn = document.getElementById("whffu");
+    console.log(btn);
+    
+    if(window.scrollY <10){
+      console.log("스크롤의 현재 위치") ;// 왜 세로 고침을 해야만 뜰까?
+      btn.style.display = "none";
+    } else{
+      btn.style.display = "inline";
+      // 왜상단으로 간다음에 내가 wheel을 굴려야 top button이 없어지지? 딱 위로 올라갔을 때 없어지고 한칸이라도 내리면 나타나게 하고 싶음      
+    }
+    window.addEventListener("wheel", function(){
+      console.log(window.scrollY) ;// 왜 세로 고침을 해야만 뜰까?
+    })
+
+    btn.addEventListener("click", (event) => {
+      window.scrollTo({
+        top:0,
+        behavior : "smooth"
+      });
+    })    
+
+    
+  </script>
+  
+</body>
+</html>

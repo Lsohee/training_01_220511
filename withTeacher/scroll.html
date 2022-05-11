@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    #root{
+      width: 100vw;
+    }
+    #root>section{
+      width:inherit;/* 100vw*/
+      height:100vh;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+  </div>
+
+  <script>
+    const root = document.querySelector("#root");
+    console.log(root);
+    const sections = root.children;
+    console.log(sections);
+
+    console.dir(root);
+    console.log("현재 이 문서의 전체 높이 값은"+ root.offsetHeight);
+    console.dir(sections[0]);
+    console.log("현재 section태그 하나의 높이 값은" + sections[0].offsetHeight);
+
+    
+    let heightValue = 0;
+    
+    window.addEventListener("click", function(){
+      heightValue = heightValue/*이때는 0 click 할때마다 값이 더해짐*/ + sections[0].offsetHeight;
+      console.log(heightValue);
+
+      if(heightValue >= root.offsetHeight){
+        heightValue=0;
+      };
+
+      window.scrollTo({
+        top:heightValue,
+        behavior:"smooth"
+      });
+    });
+
+    
+  </script>
+</body>
+</html>
