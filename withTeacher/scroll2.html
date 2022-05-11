@@ -18,6 +18,11 @@
       border:1px solid black;
       background-color: darkgray;
     }
+    #root>aside{
+      width:50vw;
+      height:50vh;
+      background-color: aqua;
+    }
   </style>
 </head>
 <body>
@@ -27,15 +32,39 @@
   <script>
     const maker  =document.getElementById("root");
     let count = 0;
-
+    let article =document.createElement("article");
+    maker.appendChild(article);
+    article.textContent="작은 숨소리 마저 아려와 어둠속으로 숨고만 싶음 밤"
     
+    // 한번 생성임 전역에서 하고 끝남 두번 사용 할 수 없음
+    
+
+
     maker.addEventListener("wheel",function(){
       let section = document.createElement("section");
       section.textContent = count;
       maker.appendChild(section);
+      section.setAttribute("id", `section-${count}`); // <!-- * 아이디를 작성하는 기계를 만들 수 있음 -->
+      section.setAttribute("class", `section-${count}`); // <!-- * class를 만드는 기계도 만들 수 있음  -->
       count++;
     });
 
+
+
+
+
+    maker.addEventListener("click", function() {
+      console.log ("여신님이 보고 계셔")
+      
+      let aside =  document.createElement("aside");
+      // <!-- * 지역 변수라서 함수 밖으로 못나감
+
+        
+      maker.appendChild(aside);
+      aside.textContent= "꿈이 아파 잠들지 못하는 밤"
+      maker.appendChild(article);
+      maker.insertBefore(aside, maker.firstChild);
+    })
 
     
   </script>
