@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    #root{
+      width:100vw;
+      height:500vh;
+      background-color: #ccc;
+    }
+    #root>section{
+      width:100vw;
+      height:100vh;
+      border:1px solid black;
+      background-color: darkgray;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    
+  </div>
+  <script>
+    const maker  =document.getElementById("root");
+    let count = 0;
+
+    
+    maker.addEventListener("wheel",function(){
+      let section = document.createElement("section");
+      section.textContent = count;
+      maker.appendChild(section);
+      count++;
+    });
+
+
+    
+  </script>
+</body>
+</html>
