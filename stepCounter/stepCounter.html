@@ -6,13 +6,14 @@
 </head>
 <body>
 <div class="count"></div>
-<script src='/stepCounter/stepCounter.js'></script>
+<script src='/stepCounter/stepCounterOneBone.js'></script>
 <script type="text/javascript">
 	var count=new Countstep();
 	 window.addEventListener("devicemotion",function(){
 	 	document.querySelector('.count').innerHTML=count[0];
 	 }, false); 
 	
+
 </script>	
 </body>
 </html>
