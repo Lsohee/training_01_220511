@@ -5,14 +5,35 @@
 	<title>test</title>
 </head>
 <body>
-<div class="count"></div>
-<script src='/stepCounter/stepCounterOneBone.js'></script>
-<script type="text/javascript">
-	var count=new Countstep();
-	 window.addEventListener("devicemotion",function(){
-	 	document.querySelector('.count').innerHTML=count[0];
-	 }, false); 
 	
+<div class="count"></div>
+
+
+<!-- * javascritp 연결구간 -->
+<script src='/stepCounter/stepCounterOneBone.js'></script>
+
+<!-- * javascritp HTML에 직접 쓴 구간 -->
+<script type="text/javascript">
+	// <!-- ? type="text/javascript"가 무슨뜻이야?
+		// <!-- * type은 스크립트의 유형을 나타낸다
+			// <!-- memo 그러면 자바스크립트가 아닌 script도 존재한다는 말이네!
+		
+		
+		
+	var count=new Countstep();
+
+	// 다 var로 하네... 옛날거인가봐
+	// <!-- ? new Countstep이라는 게 뭐야? 
+	// <!-- ? 유사한 객체를 만들때 쓰는 연산자래
+		// <!-- * 그러면 Countstep 이라는 함수랑 유사한 함수를 count 라고 선언 할당 한거네 
+			// <!-- todo 유사하다는건 다른 점이 있다는 뜻임 어떤점이 다른지 찾아볼것
+
+	window.addEventListener("devicemotion",function(){
+		// <!-- window에 이벤트 감지를 달아주는데 감지하는 이벤트는 devicemotion이고 작동할 기능은 함수 
+		document.querySelector('.count').innerHTML=count[0];
+		// 이거임 이거는 문서에 count라는 class를 가진 요소의 innerHTML에 count[0]을 써줘라는 함수임
+		}, false); 
+		// <!-- ? 하고 false값은 뭐임?
 
 </script>	
 </body>
