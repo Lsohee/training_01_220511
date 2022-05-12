@@ -6,7 +6,7 @@
 
 	}
 
-Countstep.prototype={
+	Countstep.prototype={
 	init:function(){
 		var _this=this;
 		_this.flag=false;
@@ -37,12 +37,13 @@ Countstep.prototype={
           return _this.count;
         }
          else {  
-          alert('您的浏览器不支持本计步插件');
+          alert('귀하의 브라우저는 이 단계 계산 플러그인을 지원하지 않습니다');
         }  
 
-	},
+	}
 
 
-}
+	}
+	
   window.Countstep=Countstep;
 })();
